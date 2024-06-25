@@ -8,53 +8,52 @@ import {
 	html,
 	css,
 	reactjs,
-	redux,
 	tailwind,
 	nodejs,
-	mongodb,
 	git,
-	figma,
+	n8n,
+	manychat,
 	docker,
 	meta,
 	starbucks,
 	tesla,
 	shopify,
-	carrent,
-	jobit,
-	tripguide,
+	leads,
+	n8nproject,
+	docusign,
 	threejs,
 } from "../assets";
 
 export const navLinks = [
 	{
 		id: "about",
-		title: "About",
+		title: "Sobre",
 	},
 	{
 		id: "work",
-		title: "Work",
+		title: "Experiências",
 	},
 	{
 		id: "contact",
-		title: "Contact",
+		title: "Contato",
 	},
 ];
 
 const services = [
 	{
-		title: "Web Developer",
+		title: "Desenvolvedor Web",
 		icon: web,
 	},
 	{
-		title: "React Native Developer",
+		title: "Desenvolvedor Backend",
 		icon: mobile,
 	},
 	{
-		title: "Backend Developer",
+		title: "Ferramentas Low-code",
 		icon: backend,
 	},
 	{
-		title: "Content Creator",
+		title: "Automações",
 		icon: creator,
 	},
 ];
@@ -81,10 +80,6 @@ const technologies = [
 		icon: reactjs,
 	},
 	{
-		name: "Redux Toolkit",
-		icon: redux,
-	},
-	{
 		name: "Tailwind CSS",
 		icon: tailwind,
 	},
@@ -93,8 +88,8 @@ const technologies = [
 		icon: nodejs,
 	},
 	{
-		name: "MongoDB",
-		icon: mongodb,
+		name: "PostgreSQL",
+		icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
 	},
 	{
 		name: "Three JS",
@@ -105,12 +100,16 @@ const technologies = [
 		icon: git,
 	},
 	{
-		name: "figma",
-		icon: figma,
-	},
-	{
 		name: "docker",
 		icon: docker,
+	},
+	{
+		name: "n8n",
+		icon: n8n,
+	},
+	{
+		name: "manychat",
+		icon: manychat,
 	},
 ];
 
@@ -172,7 +171,7 @@ const experiences = [
 const testimonials = [
 	{
 		testimonial:
-			"I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
+			"Achei que era impossível fazer um site tão bonito quanto o nosso produto, mas Gabriel provou que eu estava errada.",
 		name: "Sara Lee",
 		designation: "CFO",
 		company: "Acme Co",
@@ -180,7 +179,7 @@ const testimonials = [
 	},
 	{
 		testimonial:
-			"I've never met a web developer who truly cares about their clients' success like Rick does.",
+			"Nunca conheci um desenvolvedor web que realmente se preocupasse com o sucesso de seus clientes como o Gabriel.",
 		name: "Chris Brown",
 		designation: "COO",
 		company: "DEF Corp",
@@ -188,76 +187,76 @@ const testimonials = [
 	},
 	{
 		testimonial:
-			"After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
+			"Depois que Gabriel otimizou nosso site, nosso tráfego aumentou 50%. Não podemos agradecê-los o suficiente!",
 		name: "Lisa Wang",
 		designation: "CTO",
-		company: "456 Enterprises",
+		company: "456 Empresas",
 		image: "https://randomuser.me/api/portraits/women/6.jpg",
 	},
 ];
 
 const projects = [
 	{
-		name: "Car Rent",
+		name: "Integrações de APIs com n8n",
 		description:
-			"Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+			"Integrações entre APIs da empresa Desbravador utilizando a ferramenta de automação low-code n8n",
+		tags: [
+			{
+				name: "n8n",
+				color: "blue-text-gradient",
+			},
+			{
+				name: "postgresql",
+				color: "green-text-gradient",
+			},
+			{
+				name: "javascript",
+				color: "pink-text-gradient",
+			},
+		],
+		image: n8nproject,
+		source_code_link: "https://github.com/",
+	},
+	{
+		name: "Docusign API",
+		description:
+			"API para solicitar assinaturas remotamente de uma requsição passando os emails deos assinantes e conteúdo do documento em html",
+		tags: [
+			{
+				name: "nodejs",
+				color: "blue-text-gradient",
+			},
+			{
+				name: "postgresql",
+				color: "green-text-gradient",
+			},
+			{
+				name: "docusignapi",
+				color: "pink-text-gradient",
+			},
+		],
+		image: docusign,
+		source_code_link: "https://github.com/",
+	},
+	{
+		name: "GIS - Captação de Leads",
+		description:
+			"Projeto GIS fullstack para captação de leads para a empresa m8",
 		tags: [
 			{
 				name: "react",
 				color: "blue-text-gradient",
 			},
 			{
-				name: "mongodb",
+				name: "postgresql",
 				color: "green-text-gradient",
 			},
 			{
-				name: "tailwind",
+				name: "python",
 				color: "pink-text-gradient",
 			},
 		],
-		image: carrent,
-		source_code_link: "https://github.com/",
-	},
-	{
-		name: "Job IT",
-		description:
-			"Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-		tags: [
-			{
-				name: "react",
-				color: "blue-text-gradient",
-			},
-			{
-				name: "restapi",
-				color: "green-text-gradient",
-			},
-			{
-				name: "scss",
-				color: "pink-text-gradient",
-			},
-		],
-		image: jobit,
-		source_code_link: "https://github.com/",
-	},
-	{
-		name: "Trip Guide",
-		description:
-			"A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-		tags: [
-			{
-				name: "nextjs",
-				color: "blue-text-gradient",
-			},
-			{
-				name: "supabase",
-				color: "green-text-gradient",
-			},
-			{
-				name: "css",
-				color: "pink-text-gradient",
-			},
-		],
-		image: tripguide,
+		image: leads,
 		source_code_link: "https://github.com/",
 	},
 ];

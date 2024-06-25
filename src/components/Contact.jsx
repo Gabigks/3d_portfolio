@@ -16,9 +16,54 @@ const Contact = () => {
 	});
 	const [loading, setLoading] = useState(false);
 
-	const handleChange = (e) => {};
+	const handleChange = (e) => {
+		const { name, value } = e.target;
 
-	const handleSubmit = (e) => {};
+		setForm({ ...form, [name]: value });
+	};
+
+	//yoJN1wTtKwNZlKddv
+	//service_z3v7fqj
+	//template_py3ennd
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		setLoading(true);
+
+		emailjs
+			.send(
+				"service_z3v7fqj",
+				"template_py3ennd",
+				{
+					from_name: form.name,
+					to_name: "Gabriel",
+					from_email: form.email,
+					to_email: "gabriel.gksprof@gmail.com",
+					message: form.message,
+				},
+				"yoJN1wTtKwNZlKddv"
+			)
+			.then(
+				() => {
+					setLoading(false);
+					alert(
+						"Muito obrigado! Irei lhe retornar o mais rápido possível."
+					);
+
+					setForm({
+						name: "",
+						email: "",
+						message: "",
+					});
+				},
+				(error) => {
+					setLoading(false);
+					console.log(error);
+
+					alert("Algo deu errado. Por favor, tente novamente.");
+				}
+			);
+	};
 
 	return (
 		<div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
@@ -26,8 +71,8 @@ const Contact = () => {
 				variants={slideIn("left", "tween", 0.2, 1)}
 				className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
 			>
-				<p className={styles.sectionSubText}>Get in touch</p>
-				<h3 className={styles.sectionHeadText}>Contact.</h3>
+				<p className={styles.sectionSubText}>deixe um recado</p>
+				<h3 className={styles.sectionHeadText}>Contato.</h3>
 
 				<form
 					ref={formRef}
@@ -42,7 +87,7 @@ const Contact = () => {
 							type="text"
 							name="name"
 							value={form.name}
-							onChange={handleSubmit}
+							onChange={handleChange}
 							placeholder="Qual o seu nome?"
 							className="bg-tertiary py-4 px-6 placeholder:text-secondary 
               text-white rounded-lg outlined-none border-none font-medium"
@@ -56,7 +101,7 @@ const Contact = () => {
 							type="email"
 							name="email"
 							value={form.email}
-							onChange={handleSubmit}
+							onChange={handleChange}
 							placeholder="Qual o seu email?"
 							className="bg-tertiary py-4 px-6 placeholder:text-secondary 
               text-white rounded-lg outlined-none border-none font-medium"
@@ -70,7 +115,7 @@ const Contact = () => {
 							rows="7"
 							name="message"
 							value={form.message}
-							onChange={handleSubmit}
+							onChange={handleChange}
 							placeholder="Oque você gostaria de dizer?"
 							className="bg-tertiary py-4 px-6 placeholder:text-secondary 
               text-white rounded-lg outlined-none border-none font-medium"
